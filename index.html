@@ -8,6 +8,9 @@
         body { font-family: 'Courier New', monospace; background-color: #0d1117; color: #c9d1d9; padding: 5%; }
         .container { max-width: 900px; margin: auto; border: 1px solid #30363d; padding: 20px; border-radius: 6px; }
         h1 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
+        .nav-links { margin-bottom: 20px; }
+        .nav-links a { color: #58a6ff; text-decoration: none; margin-right: 15px; border: 1px solid #58a6ff; padding: 5px 10px; border-radius: 4px; font-size: 0.8em; }
+        .nav-links a:hover { background: #58a6ff; color: #0d1117; }
         .file-list { list-style: none; padding: 0; }
         .file-item { margin-bottom: 15px; padding: 10px; background: #161b22; border-left: 4px solid #238636; }
         .file-name { font-weight: bold; color: #79c0ff; }
@@ -17,12 +20,18 @@
 <body>
     <div class="container">
         <h1>TEGARU FRAMEWORK v1.0</h1>
+        
+        <div class="nav-links">
+            <a href="https://github.com/MichaelBirara/tegaru-framework">View Source Code</a>
+            <a href="https://doi.org/10.5281/zenodo.20453925">Zenodo Archive (DOI)</a>
+        </div>
+
         <p><strong>Systemic Neutralization & Post-Quantum State Mapping</strong></p>
         
         <ul class="file-list">
             <li class="file-item">
                 <span class="file-name">ring_minus_one.py</span>
-                <div class="description">Active Ring -1 Hardware Overlay. Implements "Drop and Pass" logic to neutralize traffic before OS Kernel interaction.</div>
+                <div class="description">Active Ring -1 Hardware Overlay. Implements "Drop and Pass" logic to neutralize traffic at the hardware layer.</div>
             </li>
             <li class="file-item">
                 <span class="file-name">state_engine.py</span>
@@ -31,10 +40,6 @@
             <li class="file-item">
                 <span class="file-name">README.md</span>
                 <div class="description">5-Page Technical Specification and Architectural Brief for Institutional Review.</div>
-            </li>
-            <li class="file-item">
-                <span class="file-name">LICENSE</span>
-                <div class="description">MIT Standard Open-Verification License.</div>
             </li>
         </ul>
 
