@@ -5,46 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEGARU Framework | Technical Dashboard</title>
     <style>
-        body { font-family: 'Courier New', monospace; background-color: #0d1117; color: #c9d1d9; padding: 5%; }
-        .container { max-width: 900px; margin: auto; border: 1px solid #30363d; padding: 20px; border-radius: 6px; }
-        h1 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
-        .nav-links { margin-bottom: 20px; }
-        .nav-links a { color: #58a6ff; text-decoration: none; margin-right: 15px; border: 1px solid #58a6ff; padding: 5px 10px; border-radius: 4px; font-size: 0.8em; }
-        .nav-links a:hover { background: #58a6ff; color: #0d1117; }
-        .file-list { list-style: none; padding: 0; }
-        .file-item { margin-bottom: 15px; padding: 10px; background: #161b22; border-left: 4px solid #238636; }
-        .file-name { font-weight: bold; color: #79c0ff; }
-        .description { font-size: 0.9em; color: #8b949e; margin-top: 5px; }
+        :root {
+            --bg: #0d1117;
+            --card: #161b22;
+            --border: #30363d;
+            --text-main: #c9d1d9;
+            --text-dim: #8b949e;
+            --accent: #58a6ff;
+            --success: #238636;
+        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; background-color: var(--bg); color: var(--text-main); line-height: 1.6; margin: 0; padding: 20px; }
+        .container { max-width: 800px; margin: 40px auto; border: 1px solid var(--border); padding: 40px; border-radius: 8px; background-color: var(--bg); box-shadow: 0 8px 24px rgba(0,0,0,0.5); }
+        h1 { font-size: 2rem; color: var(--accent); margin-bottom: 5px; letter-spacing: -0.5px; }
+        .subtitle { font-size: 1.1rem; color: var(--text-dim); margin-bottom: 30px; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
+        
+        .nav-buttons { display: flex; gap: 15px; margin-bottom: 40px; }
+        .btn { flex: 1; text-align: center; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.2s; border: 1px solid var(--accent); color: var(--accent); }
+        .btn:hover { background-color: var(--accent); color: var(--bg); }
+        .btn-primary { background-color: var(--accent); color: var(--bg); }
+        .btn-primary:hover { opacity: 0.9; }
+
+        .file-section { display: flex; flex-direction: column; gap: 16px; }
+        .file-card { background: var(--card); border: 1px solid var(--border); padding: 20px; border-radius: 6px; border-left: 4px solid var(--success); }
+        .file-name { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; color: var(--accent); font-weight: bold; font-size: 1.1rem; display: block; margin-bottom: 8px; }
+        .file-desc { color: var(--text-dim); font-size: 0.95rem; }
+
+        .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: var(--text-dim); }
+        .status-badge { background: rgba(35, 134, 54, 0.15); color: #3fb950; padding: 4px 12px; border-radius: 20px; border: 1px solid rgba(63, 185, 80, 0.3); font-weight: bold; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>TEGARU FRAMEWORK v1.0</h1>
+        <div class="subtitle">Systemic Neutralization & Post-Quantum State Mapping</div>
         
-        <div class="nav-links">
-            <a href="https://github.com/MichaelBirara/tegaru-framework">View Source Code</a>
-            <a href="https://doi.org/10.5281/zenodo.20453925">Zenodo Archive (DOI)</a>
+        <div class="nav-buttons">
+            <a href="https://github.com/MichaelBirara/tegaru-framework" class="btn btn-primary">View Source Code</a>
+            <a href="https://doi.org/10.5281/zenodo.20453925" class="btn">Zenodo Archive (DOI)</a>
         </div>
 
-        <p><strong>Systemic Neutralization & Post-Quantum State Mapping</strong></p>
-        
-        <ul class="file-list">
-            <li class="file-item">
+        <div class="file-section">
+            <div class="file-card">
                 <span class="file-name">ring_minus_one.py</span>
-                <div class="description">Active Ring -1 Hardware Overlay. Implements "Drop and Pass" logic to neutralize traffic at the hardware layer.</div>
-            </li>
-            <li class="file-item">
+                <div class="file-desc">Active Ring -1 Hardware Overlay. Implements "Drop and Pass" logic to neutralize traffic at the hardware layer.</div>
+            </div>
+            <div class="file-card">
                 <span class="file-name">state_engine.py</span>
-                <div class="description">Core n=1024 Lattice Engine. Manages non-linear global state mapping and deterministic verification.</div>
-            </li>
-            <li class="file-item">
+                <div class="file-desc">Core n=1024 Lattice Engine. Manages non-linear global state mapping and deterministic verification.</div>
+            </div>
+            <div class="file-card">
                 <span class="file-name">README.md</span>
-                <div class="description">5-Page Technical Specification and Architectural Brief for Institutional Review.</div>
-            </li>
-        </ul>
+                <div class="file-desc">5-Page Technical Specification and Architectural Brief for Institutional Review.</div>
+            </div>
+        </div>
 
-        <div style="margin-top: 30px; border-top: 1px solid #30363d; padding-top: 10px; font-size: 0.8em;">
-            Status: Awaiting Verification | Target: Intel PSIRT, NIST, CISA
+        <div class="footer">
+            <div>Target: Intel PSIRT, NIST, CISA</div>
+            <div class="status-badge">Awaiting Verification</div>
         </div>
     </div>
 </body>
